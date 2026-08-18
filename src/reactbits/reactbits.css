@@ -1,0 +1,57 @@
+
+.rb-aurora{
+  position:fixed; inset:0; z-index:-2; overflow:hidden; pointer-events:none;
+}
+.rb-aurora__blob{
+  position:absolute; width:46vw; height:46vw; min-width:420px; min-height:420px;
+  border-radius:50%; filter:blur(90px); opacity:.12;
+  animation:rbAuroraFloat 18s ease-in-out infinite;
+  will-change:transform;
+}
+.rb-aurora__blob--one{left:-16vw;top:-15vw;background:#55c695}
+.rb-aurora__blob--two{right:-17vw;top:28vh;background:#d88d52;animation-delay:-6s}
+.rb-aurora__blob--three{left:34vw;bottom:-28vw;background:#4a8a72;animation-delay:-11s}
+@keyframes rbAuroraFloat{
+  0%,100%{transform:translate3d(0,0,0) scale(1)}
+  50%{transform:translate3d(7vw,5vh,0) scale(1.13)}
+}
+.rb-click-spark{
+  position:fixed; inset:0; z-index:9998; pointer-events:none;
+}
+.rb-spotlight{
+  --rbx:-100px; --rby:-100px;
+  position:relative; isolation:isolate;
+}
+.rb-spotlight::after{
+  content:""; position:absolute; inset:0; pointer-events:none; z-index:3;
+  background:radial-gradient(310px circle at var(--rbx) var(--rby),
+    rgba(131,215,174,.14), transparent 58%);
+  opacity:0; transition:opacity .22s ease;
+  border-radius:inherit;
+}
+.rb-spotlight:hover::after{opacity:1}
+.rb-magnet{transition:transform .16s ease!important;will-change:transform}
+.rb-shiny{
+  background:linear-gradient(100deg,currentColor 25%,#83d7ae 48%,currentColor 70%);
+  background-size:230% 100%;
+  -webkit-background-clip:text; background-clip:text; color:transparent!important;
+  animation:rbShine 6s linear infinite;
+}
+@keyframes rbShine{to{background-position:-230% 0}}
+.rb-scroll{
+  opacity:0!important; transform:translateY(16px)!important;
+  transition:opacity .55s ease, transform .55s cubic-bezier(.2,.8,.2,1)!important;
+}
+.rb-scroll.rb-visible{opacity:1!important;transform:none!important}
+.react-original-logo{
+  padding:0!important; overflow:hidden!important; background:transparent!important;
+  box-shadow:none!important;
+}
+.react-original-logo:after{display:none!important}
+.react-original-logo img{
+  display:block; width:100%; height:100%; object-fit:cover; border-radius:11px;
+}
+@media(prefers-reduced-motion:reduce){
+  .rb-aurora__blob,.rb-shiny{animation:none!important}
+  .rb-scroll{opacity:1!important;transform:none!important}
+}
