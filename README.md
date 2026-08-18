@@ -1,6 +1,6 @@
-# EDSXEL NGANI — Full React Edition
+# FORMULA LAB — Full React Edition
 
-This project uses the user's original full-feature EDSXEL NGANI HTML as the
+This project uses the user's original full-feature FORMULA LAB HTML as the
 functionality baseline and mounts it inside a React/Vite application.
 
 The original EDS icon files are preserved exactly:
@@ -85,8 +85,12 @@ opened directly as a `file://` page.
 ## Ferrofluid background
 
 The React Bits Ferrofluid WebGL background has been added behind the existing
-EDSXEL NGANI interface using the project's green/copper palette. It keeps
+FORMULA LAB interface using the project's green/copper palette. It keeps
 cursor interaction on desktop and reduces visual intensity on mobile and
 light mode for readability.
 
 Dependency added: `ogl`.
+
+
+## Branding
+This release uses **FORMULA LAB** as the only public-facing brand name.

@@ -330,7 +330,7 @@
     @media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation:none!important;transition:none!important}.hero>div:first-child,.hero-card,.section-head,.filters,.panel,.footer-inner{opacity:1;transform:none}}
 
 
-    /* EDSXEL NGANI — readable modern type with pixel accents */
+    /* FORMULA LAB — readable modern type with pixel accents */
     body{font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
     .brand{font-family:var(--font-pixel);letter-spacing:.02em;font-size:15px;line-height:1.15}
     .brand small{font-family:var(--font-body);letter-spacing:.13em;font-size:8.5px;margin-top:5px}
@@ -353,7 +353,7 @@
     }
   
 
-    /* EDSXEL NGANI Pro library controls */
+    /* FORMULA LAB Pro library controls */
     .nav-actions{display:flex;align-items:center;gap:8px}
     .icon-btn{width:40px;height:40px;border:1px solid var(--line);border-radius:11px;background:var(--card);color:var(--ink);display:grid;place-items:center;font-size:17px;box-shadow:0 5px 14px rgba(14,25,19,.06);transition:transform .2s ease,background .2s ease,color .2s ease,border-color .2s ease}
     .icon-btn:hover{transform:translateY(-2px);background:var(--pine-soft);color:var(--pine-deep)}
@@ -512,7 +512,7 @@
     }
 
 
-    /* EDSXEL NGANI Learning Suite */
+    /* FORMULA LAB Learning Suite */
     .searchbox{position:relative}
     .smart-results{
       position:absolute;left:0;right:0;top:calc(100% + 8px);z-index:65;
@@ -595,7 +595,7 @@
     }
 
 
-    /* ===== EDSXEL NGANI Complete Suite ===== */
+    /* ===== FORMULA LAB Complete Suite ===== */
     .daily-card{
       max-width:1220px;margin:0 auto 4px;padding:0 22px;
     }

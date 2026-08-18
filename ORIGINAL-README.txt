@@ -1,4 +1,4 @@
-EDSXEL NGANI v1.0 — Launch Package
+FORMULA LAB v1.0 — Launch Package
 
 Upload all files in this folder together to Vercel or another HTTPS host.
 

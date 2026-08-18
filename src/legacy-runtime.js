@@ -431,7 +431,7 @@
 
 
 
-    /* ===== EDSXEL NGANI Complete Suite ===== */
+    /* ===== FORMULA LAB Complete Suite ===== */
     let learned = new Set(JSON.parse(localStorage.getItem("edsxelLearned") || "[]"));
     let formulaNotes = JSON.parse(localStorage.getItem("edsxelNotes") || "{}");
     let taglishMode = localStorage.getItem("edsxelLanguage")==="taglish";
@@ -661,7 +661,7 @@
       cheatNames=[...(source==="favorites"?favorites:learned)].filter(n=>formulas.some(f=>f.name===n));
       const list=cheatNames.map(n=>formulas.find(f=>f.name===n));
       document.getElementById("cheatPreview").innerHTML=list.length?`<strong>${list.length} formulas ready</strong><br>${list.slice(0,10).map(f=>f.name).join(", ")}${list.length>10?"…":""}`:"No formulas yet. Add Favorites or mark formulas as Learned first.";
-      document.getElementById("cheatPrint").innerHTML=`<h1>EDSXEL NGANI — Formula Cheat Sheet</h1>`+list.map(f=>`<section><h2>${f.name}</h2><p>${escapeHtml(f.desc)}</p><pre>${escapeHtml(f.example)}</pre></section>`).join("");
+      document.getElementById("cheatPrint").innerHTML=`<h1>FORMULA LAB — Formula Cheat Sheet</h1>`+list.map(f=>`<section><h2>${f.name}</h2><p>${escapeHtml(f.desc)}</p><pre>${escapeHtml(f.example)}</pre></section>`).join("");
     }
     document.getElementById("cheatFavorites").addEventListener("click",()=>buildCheat("favorites"));
     document.getElementById("cheatLearned").addEventListener("click",()=>buildCheat("learned"));
