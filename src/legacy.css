@@ -1002,3 +1002,99 @@
     flex-basis:34px;
   }
 }
+
+
+/* === FORMULA LAB mobile hamburger navigation === */
+.mobile-menu-toggle{display:none !important}
+
+@media (max-width:700px){
+  .mobile-menu-toggle{
+    display:grid !important;
+    place-items:center !important;
+    width:34px !important;
+    height:34px !important;
+    min-width:34px !important;
+    padding:0 !important;
+    font-size:18px !important;
+    line-height:1 !important;
+  }
+
+  .mobile-nav-drawer{
+    display:block;
+    position:fixed;
+    top:0;
+    right:0;
+    width:min(86vw,340px);
+    height:100dvh;
+    z-index:9995;
+    background:var(--card);
+    border-left:1px solid var(--line);
+    box-shadow:-24px 0 60px rgba(0,0,0,.24);
+    transform:translateX(105%);
+    transition:transform .28s cubic-bezier(.2,.8,.2,1);
+    padding:16px;
+    overflow-y:auto;
+  }
+
+  .mobile-nav-drawer.open{transform:translateX(0)}
+
+  .mobile-nav-head{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+    padding:5px 2px 14px;
+    border-bottom:1px solid var(--line);
+    font-family:var(--font-display);
+    color:var(--ink);
+  }
+
+  .mobile-nav-close{
+    width:36px;height:36px;border:1px solid var(--line);border-radius:10px;
+    background:var(--paper);color:var(--ink);font-size:24px;line-height:1
+  }
+
+  .mobile-nav-links{
+    display:grid;
+    gap:7px;
+    padding-top:13px;
+  }
+
+  .mobile-nav-links a{
+    display:flex;
+    align-items:center;
+    min-height:46px;
+    padding:11px 13px;
+    border:1px solid var(--line);
+    border-radius:11px;
+    background:var(--paper);
+    color:var(--ink);
+    text-decoration:none;
+    font-weight:700;
+    font-size:13px;
+  }
+
+  .mobile-nav-links a:hover,.mobile-nav-links a:focus-visible{
+    background:var(--pine-soft);
+    color:var(--pine-deep);
+  }
+
+  body.mobile-nav-open{overflow:hidden !important}
+
+  body.dark-mode .mobile-nav-drawer{
+    background:#12231b;
+    border-color:#355347;
+  }
+
+  body.dark-mode .mobile-nav-close,
+  body.dark-mode .mobile-nav-links a{
+    background:#0f1c16;
+    border-color:#355347;
+    color:#eef7f2;
+  }
+
+  body.dark-mode .mobile-nav-links a:hover{
+    background:#193328;
+    color:#bff0d7;
+  }
+}

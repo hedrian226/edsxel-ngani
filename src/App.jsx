@@ -37,6 +37,75 @@ function enhanceWithReactBits(host) {
   const brandText = host.querySelector(".brand > div:last-child");
   if (brandText) brandText.classList.add("rb-shiny");
 
+  // Mobile hamburger navigation: keep the header compact while preserving every nav link.
+  const nav = host.querySelector(".topbar .nav");
+  const navlinks = host.querySelector(".topbar .navlinks");
+  const navActions = host.querySelector(".topbar .nav-actions");
+
+  if (nav && navlinks && !host.querySelector(".mobile-menu-toggle")) {
+    const menuButton = document.createElement("button");
+    menuButton.type = "button";
+    menuButton.className = "icon-btn mobile-menu-toggle";
+    menuButton.setAttribute("aria-label", "Open navigation");
+    menuButton.setAttribute("aria-expanded", "false");
+    menuButton.innerHTML = '<span aria-hidden="true">☰</span>';
+
+    const mobileMenu = document.createElement("div");
+    mobileMenu.className = "mobile-nav-drawer";
+    mobileMenu.setAttribute("aria-hidden", "true");
+
+    const menuHead = document.createElement("div");
+    menuHead.className = "mobile-nav-head";
+    menuHead.innerHTML = '<strong>FORMULA LAB</strong>';
+
+    const closeButton = document.createElement("button");
+    closeButton.type = "button";
+    closeButton.className = "mobile-nav-close";
+    closeButton.setAttribute("aria-label", "Close navigation");
+    closeButton.textContent = "×";
+    menuHead.appendChild(closeButton);
+
+    const menuLinks = document.createElement("div");
+    menuLinks.className = "mobile-nav-links";
+
+    const closeMenu = () => {
+      mobileMenu.classList.remove("open");
+      mobileMenu.setAttribute("aria-hidden", "true");
+      menuButton.setAttribute("aria-expanded", "false");
+      menuButton.setAttribute("aria-label", "Open navigation");
+      document.body.classList.remove("mobile-nav-open");
+    };
+
+    navlinks.querySelectorAll("a").forEach(link => {
+      const clone = link.cloneNode(true);
+      clone.addEventListener("click", closeMenu);
+      menuLinks.appendChild(clone);
+    });
+
+    mobileMenu.appendChild(menuHead);
+    mobileMenu.appendChild(menuLinks);
+    host.appendChild(mobileMenu);
+
+    const openMenu = () => {
+      mobileMenu.classList.add("open");
+      mobileMenu.setAttribute("aria-hidden", "false");
+      menuButton.setAttribute("aria-expanded", "true");
+      menuButton.setAttribute("aria-label", "Close navigation");
+      document.body.classList.add("mobile-nav-open");
+    };
+
+    menuButton.addEventListener("click", () => {
+      mobileMenu.classList.contains("open") ? closeMenu() : openMenu();
+    });
+    closeButton.addEventListener("click", closeMenu);
+    document.addEventListener("keydown", e => {
+      if (e.key === "Escape") closeMenu();
+    });
+
+    if (navActions) navActions.insertBefore(menuButton, navActions.firstChild);
+    else nav.appendChild(menuButton);
+  }
+
   const revealTargets = host.querySelectorAll(
     ".section-head,.launch-card,.daily-inner,.progress-panel,.feature-panel,.about-box"
   );
