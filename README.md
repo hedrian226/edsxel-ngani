@@ -81,3 +81,12 @@ Output directory: `dist`
 
 The PWA/service worker requires HTTPS or localhost. It does not install when
 opened directly as a `file://` page.
+
+## Ferrofluid background
+
+The React Bits Ferrofluid WebGL background has been added behind the existing
+EDSXEL NGANI interface using the project's green/copper palette. It keeps
+cursor interaction on desktop and reduces visual intensity on mobile and
+light mode for readability.
+
+Dependency added: `ogl`.

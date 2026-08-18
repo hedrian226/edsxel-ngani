@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from "react";
 import legacyMarkup from "./legacy-markup";
 import Aurora from "./reactbits/Aurora";
 import ClickSpark from "./reactbits/ClickSpark";
+import Ferrofluid from "./reactbits/Ferrofluid/Ferrofluid";
 import "./legacy.css";
 import "./reactbits/reactbits.css";
 
@@ -92,6 +93,24 @@ export default function App() {
 
   return (
     <>
+      <Ferrofluid
+        className="edsxel-ferrofluid-bg"
+        colors={["#83d7ae","#1f6f57","#e2a064","#a5e7c8"]}
+        speed={0.22}
+        scale={1.75}
+        turbulence={0.82}
+        fluidity={0.14}
+        rimWidth={0.22}
+        sharpness={2.7}
+        shimmer={1.15}
+        glow={1.8}
+        flowDirection="down"
+        opacity={0.82}
+        mouseInteraction={true}
+        mouseStrength={0.7}
+        mouseRadius={0.28}
+        mouseDampening={0.18}
+      />
       <Aurora />
       <ClickSpark />
       <div ref={hostRef} dangerouslySetInnerHTML={{ __html: legacyMarkup }} />

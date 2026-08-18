@@ -1,0 +1,34 @@
+
+.ferrofluid-container{
+  width:100%;
+  height:100%;
+  position:relative;
+  overflow:hidden;
+}
+.edsxel-ferrofluid-bg{
+  position:fixed;
+  inset:0;
+  z-index:-3;
+  pointer-events:auto;
+  opacity:.72;
+}
+.edsxel-ferrofluid-bg canvas{
+  position:absolute;
+  inset:0;
+}
+:root:not(.dark-mode) .edsxel-ferrofluid-bg{
+  opacity:.20;
+  filter:saturate(.75);
+}
+body.dark-mode .edsxel-ferrofluid-bg{
+  opacity:.52;
+}
+@media(max-width:700px){
+  .edsxel-ferrofluid-bg{
+    opacity:.28;
+    pointer-events:none;
+  }
+}
+@media(prefers-reduced-motion:reduce){
+  .edsxel-ferrofluid-bg{display:none}
+}
