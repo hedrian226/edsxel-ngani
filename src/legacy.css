@@ -913,3 +913,92 @@
     }
 
   
+
+/* === Compact mobile header fix === */
+@media (max-width:700px){
+  .topbar{
+    position:sticky;
+    top:0;
+    z-index:80;
+  }
+
+  .topbar .nav{
+    min-height:58px;
+    padding:8px 12px !important;
+    display:flex !important;
+    flex-wrap:nowrap !important;
+    align-items:center !important;
+    justify-content:space-between !important;
+    gap:8px !important;
+  }
+
+  .topbar .brand{
+    flex:1 1 auto;
+    min-width:0;
+    gap:8px;
+  }
+
+  .topbar .logo{
+    width:38px !important;
+    height:38px !important;
+    flex:0 0 38px;
+  }
+
+  .topbar .brand > div:last-child{
+    min-width:0;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+  }
+
+  .topbar .brand small{
+    display:none !important;
+  }
+
+  /* Desktop navigation was creating the huge 2-column sticky block */
+  .topbar .navlinks{
+    display:none !important;
+  }
+
+  .topbar .nav-actions{
+    margin-left:auto !important;
+    display:flex !important;
+    align-items:center !important;
+    gap:5px !important;
+    flex:0 0 auto;
+  }
+
+  .topbar .icon-btn{
+    width:34px !important;
+    height:34px !important;
+    min-width:34px !important;
+    padding:0 !important;
+  }
+
+  .topbar .lang-btn{
+    min-width:38px !important;
+    width:38px !important;
+    font-size:9px !important;
+  }
+
+  /* Bottom nav is the primary navigation on phones */
+  .mobile-bottom-nav{
+    display:grid !important;
+  }
+
+  /* Prevent anchor targets from sitting underneath sticky header */
+  section[id]{
+    scroll-margin-top:72px;
+  }
+}
+
+@media (max-width:420px){
+  .topbar .brand{
+    font-size:10px !important;
+  }
+  .topbar .logo{
+    width:34px !important;
+    height:34px !important;
+    flex-basis:34px;
+  }
+}
